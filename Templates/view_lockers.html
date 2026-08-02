@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Lockers</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f9;
+}
+
+.header{
+    background:#0f172a;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.container{
+    width:90%;
+    margin:30px auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+th{
+    background:#2563eb;
+    color:white;
+    padding:15px;
+}
+
+td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f5f9;
+}
+
+.available{
+    color:green;
+    font-weight:bold;
+}
+
+.occupied{
+    color:red;
+    font-weight:bold;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+<h1>🏦 Bank Locker Allocation System</h1>
+</div>
+
+<div class="container">
+
+<h2>Locker Details</h2>
+
+<table>
+
+<tr>
+<th>Locker ID</th>
+<th>Size</th>
+<th>Status</th>
+<th>Customer</th>
+<th>Allotted Date</th>
+</tr>
+
+{% for locker in lockers %}
+
+<tr>
+
+<td>{{ locker.locker_id }}</td>
+
+<td>{{ locker.size }}</td>
+
+<td>
+
+{% if locker.status=="Available" %}
+<span class="available">Available</span>
+{% else %}
+<span class="occupied">Occupied</span>
+{% endif %}
+
+</td>
+
+<td>{{ locker.customer }}</td>
+
+<td>{{ locker.allotted_on }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<a href="/dashboard" class="btn">⬅ Dashboard</a>
+
+</div>
+
+</body>
+</html>

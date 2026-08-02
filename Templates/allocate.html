@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Allocate Locker</title>
+
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f6f9;
+        }
+
+        .box{
+            width:450px;
+            margin:60px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 5px 15px rgba(0,0,0,.2);
+        }
+
+        h2{
+            text-align:center;
+            color:#1e3a8a;
+        }
+
+        input{
+            width:100%;
+            padding:12px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:5px;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#2563eb;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>🔐 Allocate Locker</h2>
+
+<form method="POST">
+
+<input type="text" name="locker_id" placeholder="Locker ID" required>
+
+<input type="text" name="customer" placeholder="Customer Name" required>
+
+<input type="date" name="date" required>
+
+<button type="submit">
+Allocate Locker
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

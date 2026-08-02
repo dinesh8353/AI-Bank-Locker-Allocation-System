@@ -1,0 +1,16 @@
+[
+    {
+        "locker_id": "L101",
+        "size": "Small",
+        "status": "Available",
+        "customer": "",
+        "allotted_on": ""
+    },
+    {
+        "locker_id": "L102",
+        "size": "Medium",
+        "status": "Occupied",
+        "customer": "Dinesh",
+        "allotted_on": "2026-08-01"
+    }
+]

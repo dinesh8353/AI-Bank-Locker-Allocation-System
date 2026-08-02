@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Locker</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.container{
+    width:500px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    color:#1e3a8a;
+    margin-bottom:25px;
+}
+
+label{
+    font-weight:bold;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    margin:10px 0 20px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+a{
+    display:block;
+    text-align:center;
+    margin-top:20px;
+    text-decoration:none;
+    color:#2563eb;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Add New Locker</h2>
+
+<form action="/add_locker" method="POST">
+
+<label>Locker ID</label>
+<input type="text" name="locker_id" placeholder="Example: L101" required>
+
+<label>Locker Size</label>
+
+<select name="size">
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+<button type="submit">Add Locker</button>
+
+</form>
+
+<a href="/dashboard">⬅ Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>

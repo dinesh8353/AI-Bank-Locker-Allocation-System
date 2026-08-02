@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Locker Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    display:flex;
+    background:#f4f6f9;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#0f172a;
+    color:white;
+    position:fixed;
+    left:0;
+    top:0;
+}
+
+.sidebar h2{
+    text-align:center;
+    padding:20px;
+    background:#1e3a8a;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:15px 20px;
+    transition:.3s;
+}
+
+.sidebar a:hover{
+    background:#2563eb;
+}
+
+/* Main */
+
+.main{
+    margin-left:250px;
+    width:100%;
+    padding:30px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#1e3a8a;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.card h3{
+    color:#555;
+}
+
+.card h2{
+    color:#2563eb;
+    font-size:36px;
+    margin-top:10px;
+}
+
+.quick{
+    margin-top:40px;
+}
+
+.quick h2{
+    margin-bottom:20px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.buttons a{
+    width:220px;
+    text-decoration:none;
+    text-align:center;
+    padding:18px;
+    background:#2563eb;
+    color:white;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.buttons a:hover{
+    background:#1d4ed8;
+}
+
+.chart{
+    width:600px;
+    margin:50px auto;
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+<h2>🏦 Admin Panel</h2>
+
+<a href="/dashboard">🏠 Dashboard</a>
+<a href="/add_locker">➕ Add Locker</a>
+<a href="/allocate">🔐 Allocate Locker</a>
+<a href="/view_lockers">📋 View Lockers</a>
+<a href="/search">🔍 Search Customer</a>
+<a href="/release">♻ Release Locker</a>
+<a href="/reports">📊 Reports</a>
+<a href="/logout" onclick="return confirm('Are you sure you want to logout?')">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+<div class="header">
+<h1>🏦 Bank Locker Allocation Dashboard</h1>
+<h3>Welcome Admin</h3>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Lockers</h3>
+<h2>{{ total }}</h2>
+</div>
+
+<div class="card">
+<h3>Available</h3>
+<h2>{{ available }}</h2>
+</div>
+
+<div class="card">
+<h3>Occupied</h3>
+<h2>{{ occupied }}</h2>
+</div>
+
+</div>
+
+<div class="quick">
+
+<h2>Quick Actions</h2>
+
+<div class="buttons">
+
+<a href="/add_locker">➕ Add Locker</a>
+
+<a href="/allocate">🔐 Allocate Locker</a>
+
+<a href="/view_lockers">📋 View Lockers</a>
+
+<a href="/search">🔍 Search Customer</a>
+
+<a href="/release">♻ Release Locker</a>
+
+<a href="/reports">📊 Reports</a>
+
+</div>
+
+</div>
+
+<div class="chart">
+
+<canvas id="lockerChart"></canvas>
+
+</div>
+
+</div>
+
+<script>
+const ctx = document.getElementById("lockerChart");
+
+new Chart(ctx, {
+    type: "doughnut",
+    data: {
+        labels: ["Available", "Occupied"],
+        datasets: [{
+            data: [80, 20],
+            backgroundColor: ["#22c55e", "#ef4444"],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: "bottom"
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
