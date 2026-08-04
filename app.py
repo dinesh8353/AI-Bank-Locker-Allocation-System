@@ -21,9 +21,12 @@ def save_data(data):
         json.dump(data, file, indent=4)
 
 # ---------- Login ----------
+# ---------- Login ----------
 @app.route("/login", methods=["GET", "POST"])
 def login():
+
     if request.method == "POST":
+
         username = request.form["username"]
         password = request.form["password"]
 
@@ -31,11 +34,8 @@ def login():
             return redirect("/dashboard")
         else:
             return "Invalid Username or Password"
-    return render_template("login.html")
 
-@app.route("/login")
-def login():
-    return "LOGIN PAGE WORKING"
+    return render_template("login.html")
 
 # ---------- Dashboard ----------
 @app.route("/dashboard")
