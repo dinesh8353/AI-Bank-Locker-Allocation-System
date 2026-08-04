@@ -27,7 +27,7 @@ def login():
         username = request.form["username"]
         password = request.form["password"]
 
-        if username == "Dinesh" and password == "1234":
+        if username == "admin" and password == "1234":
             return redirect("/dashboard")
         else:
             return "Invalid Username or Password"

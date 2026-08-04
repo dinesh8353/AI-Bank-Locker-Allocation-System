@@ -12,5 +12,26 @@
         "status": "Available",
         "customer": "",
         "allotted_on": ""
+    },
+    {
+        "locker_id": "L06",
+        "size": "Small",
+        "status": "Available",
+        "customer": "",
+        "allotted_on": ""
+    },
+    {
+        "locker_id": "L09",
+        "size": "Medium",
+        "status": "Available",
+        "customer": "",
+        "allotted_on": ""
+    },
+    {
+        "locker_id": "L08",
+        "size": "Small",
+        "status": "Available",
+        "customer": "",
+        "allotted_on": ""
     }
 ]
