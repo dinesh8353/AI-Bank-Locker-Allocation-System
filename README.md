@@ -21,6 +21,7 @@ The AI-Based Bank Locker Allocation and Security System is a secure locker manag
 - SQLite
 
 ## 📂 Project Structure
+```
 AI-Bank-Locker-Allocation-System
 │── app.py
 │── requirements.txt
