@@ -33,8 +33,9 @@ def login():
             return "Invalid Username or Password"
     return "LOGIN PAGE WORKING"
 
-    
-
+@app.route("/login")
+def login():
+    return "LOGIN PAGE WORKING"
 
 # ---------- Dashboard ----------
 @app.route("/dashboard")
