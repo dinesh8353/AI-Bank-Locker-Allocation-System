@@ -31,7 +31,7 @@ def login():
             return redirect("/dashboard")
         else:
             return "Invalid Username or Password"
-    return "LOGIN PAGE WORKING"
+    return render_template("login.html")
 
 @app.route("/login")
 def login():
