@@ -22,16 +22,19 @@ def save_data(data):
 
 # ---------- Login ----------
 # ---------- Login ----------
+# ---------- Login ----------
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
     if request.method == "POST":
 
-        username = request.form["username"]
-        password = request.form["password"]
+        username = request.form.get("username").strip()
+        password = request.form.get("password").strip()
 
-        if username == "admin" and password == "1234":
+        print(username, password)
+
+        if username.lower() == "admin" and password == "1234":
             return redirect("/dashboard")
         else:
             return "Invalid Username or Password"
